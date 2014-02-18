@@ -14,24 +14,24 @@ function getTime() {
   var date = now.getDate();
 
   // Soon time for first coffee
-  var t_0900 = new Date(year, month, date, 09, 00, 0, 0);
+  var first_soon = new Date(year, month, date, 09, 00, 0, 0);
 
   // First coffee time slot
-  var t_0930 = new Date(year, month, date, 09, 30, 0, 0);
-  var t_1130 = new Date(year, month, date, 11, 30, 0, 0);
+  var first_begin = new Date(year, month, date, 09, 30, 0, 0);
+  var first_end = new Date(year, month, date, 11, 30, 0, 0);
 
   // Soon time for second coffee
-  var t_1300 = new Date(year, month, date, 13, 00, 0, 0);
+  var second_soon = new Date(year, month, date, 13, 00, 0, 0);
 
   // Second coffee time slot
-  var t_1330 = new Date(year, month, date, 13, 30, 0, 0);
-  var t_1700 = new Date(year, month, date, 17, 00, 0, 0);
+  var second_begin = new Date(year, month, date, 13, 30, 0, 0);
+  var second_end = new Date(year, month, date, 17, 00, 0, 0);
 
   // So, is it coffee time? (0930 – 1130 and 1330 – 1700)
-  if ( now >= t_0930 && now <= t_1130 || now >= t_1330 && now <= t_1700 ) {
+  if ( now >= first_begin && now <= first_end || now >= second_begin && now <= second_end ) {
     var coffeeTime = "Yes! :-D";
   }
-  else if ( now >= t_0900 && now <= t_0930 || now >= t_1300 && now <= t_1330 ) {
+  else if ( now >= first_soon && now < first_begin || now >= second_soon && now < second_begin ) {
     var coffeeTime = "Soon :-)";
   }
   else {
