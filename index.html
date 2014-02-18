@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Is it coffee time?</title>
+<link rel=stylesheet href=//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css>
+<script type="text/javascript">
+function getTime() {
+	var now = new Date();
+
+	// = Start debugging
+	// now.setHours(18);
+	// now.setMinutes(30);
+	// var currentTime = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+	// document.getElementById('current_time').innerHTML = currentTime;
+	// = End debugging
+
+	var year = now.getFullYear();
+	var month = now.getMonth();
+	var date = now.getDate();
+
+	// Soon time for first coffee
+	var t_0900 = new Date(year, month, date, 09, 00, 0, 0);
+
+	// First coffee time slot
+	var t_0930 = new Date(year, month, date, 09, 30, 0, 0);
+	var t_1130 = new Date(year, month, date, 11, 30, 0, 0);
+
+	// Soon time for second coffee
+	var t_1300 = new Date(year, month, date, 13, 00, 0, 0);
+
+	// Second coffee time slot
+	var t_1330 = new Date(year, month, date, 13, 30, 0, 0);
+	var t_1700 = new Date(year, month, date, 17, 00, 0, 0);
+
+	// So, is it coffee time? (0930 – 1130 and 1330 – 1700)
+	if ( now >= t_0930 && now <= t_1130 || now >= t_1330 && now <= t_1700 ) {
+		var coffeeTime = "Yes! :-D";
+	}
+	else if ( now >= t_0900 && now <= t_0930 || now >= t_1300 && now <= t_1330 ) {
+		var coffeeTime = "Soon :-)";
+	}
+	else {
+		var coffeeTime = "Nope :-(";
+	}
+
+	document.getElementById('coffee_time').innerHTML = coffeeTime;
+
+	setTimeout('getTime()', 1000);
+}
+</script>
+</head>
+<body onload="getTime();">
+<div class="container" style="text-align: center;">
+	<div class="jumbotron">
+		<h1>Is it coffee time?</h1>
+		<br />
+		<h3><div id="coffee_time"></div></h3>
+	</div>
+
+	<a title="When is the best time to drink coffee?" href="http://en.ilovecoffee.jp/posts/view/110" target="_blank">Why?</a>
+	<br /><br />
+	<a title="@maedox on Twitter" href="https://twitter.com/maedox" target="_blank">@maedox</a>
+	<div id="current_time"></div>
+</div>
+</body>
+</html>
