@@ -9,35 +9,8 @@
 <link rel=stylesheet href=//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css>
 <script type="text/javascript">
 function isItTime() {
-  var now = new Date();
-  var year = now.getFullYear();
-  var month = now.getMonth();
-  var date = now.getDate();
-
-  // Soon time for first coffee
-  var first_soon = new Date(year, month, date, 09, 00, 0, 0);
-
-  // First coffee time slot
-  var first_begin = new Date(year, month, date, 09, 30, 0, 0);
-  var first_end = new Date(year, month, date, 11, 30, 0, 0);
-
-  // Soon time for second coffee
-  var second_soon = new Date(year, month, date, 13, 00, 0, 0);
-
-  // Second coffee time slot
-  var second_begin = new Date(year, month, date, 13, 30, 0, 0);
-  var second_end = new Date(year, month, date, 17, 00, 0, 0);
-
-  // So, is it coffee time? (0930 – 1130 and 1330 – 1700)
-  if ( now >= first_begin && now <= first_end || now >= second_begin && now <= second_end ) {
-    var coffeeTime = "Yes! :-D";
-  }
-  else if ( now >= first_soon && now < first_begin || now >= second_soon && now < second_begin ) {
-    var coffeeTime = "Soon :-)";
-  }
-  else {
-    var coffeeTime = "Nope :-(";
-  }
+  
+  var coffeeTime = "Yes! :-D";
 
   document.getElementById('coffee_time').innerHTML = coffeeTime;
 
