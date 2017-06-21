@@ -30,13 +30,13 @@ function isItTime() {
 
   // So, is it coffee time? (0930 – 1130 and 1330 – 1700)
   if ( now >= first_begin && now <= first_end || now >= second_begin && now <= second_end ) {
-    var coffeeTime = "Yes! :-D";
+    var coffeeTime = "Yes! 😃☕️‼️";
   }
   else if ( now >= first_soon && now < first_begin || now >= second_soon && now < second_begin ) {
-    var coffeeTime = "Soon :-)";
+    var coffeeTime = "Soon 😌";
   }
   else {
-    var coffeeTime = "Nope :-(";
+    var coffeeTime = "Nope ☹️";
   }
 
   document.getElementById('coffee_time').innerHTML = coffeeTime;
